@@ -3,14 +3,16 @@
             [clojure.string :as str])
   (:import (com.code_intelligence.jazzer.api FuzzedDataProvider)))
 
-(def fuzzer-test-one-input-signature
+(def ^:no-doc fuzzer-test-one-input-signature
   (quote ^:static [fuzzerTestOneInput [com.code_intelligence.jazzer.api.FuzzedDataProvider] void]))
 
 (defmacro deftarget
   "Define a Jazzer fuzz target.
 
-    (deftarget com.example.MyTarget [input]
-      (do-something (.consumeInt input)))
+  ```clojure
+  (deftarget com.example.MyTarget [input]
+    (do-something (.consumeInt input)))
+  ```
 
   The input parameter is of type
   `com.code_intelligence.jazzer.api.FuzzedDataProvider` and can be used in the

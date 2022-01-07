@@ -1,5 +1,7 @@
 # Fuzzing Clojure code with [Jazzer](https://github.com/CodeIntelligenceTesting/jazzer)
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.code-intelligence/jazzer-clj.svg)](https://clojars.org/com.code-intelligence/jazzer-clj)
+
 The goal of `jazzer-clj` is to provide an idiomatic way to test Clojure software
 with the JVM fuzzer [Jazzer](https://github.com/CodeIntelligenceTesting/jazzer).
 See

@@ -27,14 +27,13 @@ a fuzz target like so:
 ;; assume it's defined like this:
 (defn do-something
   "Not a very useful piece of code."
-  [x s]
-  (when (and (= 42 x)
-             (= "supersecret" s))
+  [s]
+  (when (= "supersecret" s)
     (throw (Exception. "You found the bug!"))))
 
 ;; Now we define the actual test:
 (fuzzing/deftarget your.company.fuzzing.DoSomethingTarget [input]
-  (do-something (.consumeInt input) (.consumeRemainingAsString input)))
+  (do-something (.consumeRemainingAsString input)))
 ```
 
 Internally, this defines a Java class with the interface required by Jazzer
